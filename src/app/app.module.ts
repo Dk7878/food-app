@@ -19,8 +19,8 @@ RatingModule
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RatingModule
+    AppRoutingModule
+    
     
   ],
   providers: [FoodService],
