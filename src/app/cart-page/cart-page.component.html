@@ -1,4 +1,4 @@
-<div *ngIf="cart && cart.items.length > 0" class="container">
+<div *ngIf="cart && cart.items.length >0" class="container">
     <ul>
         <li *ngFor="let cartItem of cart.items">
             <div>
@@ -11,7 +11,7 @@
             </div>
 
             <div>
-                <select #quantitySelect (change)="changeQuantity(cartItem, quantitySelect.value)">
+                <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -35,7 +35,8 @@
     <div class="checkout">
         <div>
             <div class="foods-count">{{cart.items.length}}</div>
-            <div class="total-price">{{cart.totalPrice | currency}}</div>
+            <div class="total-price">{{cart.totalPrice| currency}}</div>
         </div>
     </div>
+
 </div>

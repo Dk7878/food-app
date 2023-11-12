@@ -9,13 +9,17 @@ import { Food } from 'src/app/shared/models/Food';
 export class CartService {
   private cart:Cart = new Cart();
 
-  addToCart(food: Food):void{
+  addToCart(food: Food): void {
     let cartItem = this.cart.items.find(item => item.food.id === food.id);
-    if(cartItem){
+  
+    if (cartItem) {
       this.changeQuantity(food.id, cartItem.quantity + 1);
-      return;
+    } else {
+      this.cart.items.push(new CartItem(food));
     }
-    this.cart.items.push(new CartItem(food));
+  
+    // Update the cart property with the totalPrice
+    this.cart = { ...this.cart, totalPrice: this.cart.totalPrice };
   }
 
   removeFromCart(foodId:number): void{
@@ -23,9 +27,12 @@ export class CartService {
     this.cart.items.filter(item => item.food.id != foodId);
   }
 
-  changeQuantity(foodId:number, quantity:number){
+  changeQuantity(foodId: number, quantity: number): void {
     let cartItem = this.cart.items.find(item => item.food.id === foodId);
-    if(!cartItem) return;
+    if (!cartItem) {
+      console.error(`CartItem with foodId ${foodId} not found.`);
+      return;
+    }
     cartItem.quantity = quantity;
   }
 
