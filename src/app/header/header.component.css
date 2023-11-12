@@ -1,35 +1,65 @@
-header{
+header {
     background: white;
-    padding: 0;
+    padding: 1em 0;
     border-bottom: 1px solid #e72929;
-}
-
-a{
-    color:#af1313
-}
-
-a:hover{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; /* Smooth transition for box shadow */
+  }
+  
+  a {
+    color: #af1313;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+  }
+  
+  a:hover {
     background: #e72929;
     color: white;
-}
-
-.container{
+  }
+  
+  .container {
     margin: 0 auto;
     display: flex;
-    justify-content:space-between;
-}
-
-a.logo{
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+  }
+  
+  a.logo {
     font-weight: bold;
     padding: 1em;
-}
-
-nav ul{
+    font-size: 1.2em;
+  }
+  
+  nav ul {
     list-style-type: none;
     margin: 0;
-}
-
-nav ul li a {
+    display: flex;
+    align-items: center; /* Center vertically */
+  }
+  
+  nav ul li {
+    margin-right: 1em;
+  }
+  
+  nav ul li a {
     padding: 1em;
     display: inline-block;
-}
+    border-radius: 0.5em;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    nav ul {
+      margin-top: 1em;
+    }
+  }
+  
+  /* Apply box shadow only when scrolling down */
+  header.scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
