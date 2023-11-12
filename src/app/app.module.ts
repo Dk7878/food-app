@@ -8,20 +8,25 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { FoodService } from './services/food/food.service';
 import { RatingModule } from 'ng-starrating';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 RouterModule
 RatingModule
+FormsModule
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
     
-    
+  
   ],
   providers: [FoodService],
   bootstrap: [AppComponent]
