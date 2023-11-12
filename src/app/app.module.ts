@@ -10,6 +10,8 @@ import { FoodService } from './services/food/food.service';
 import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { TagsComponent } from './tags/tags.component';
+import { FoodpageComponent } from './foodpage/foodpage.component';
 RouterModule
 RatingModule
 FormsModule
@@ -19,7 +21,9 @@ FormsModule
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    TagsComponent,
+    FoodpageComponent
   ],
   imports: [
     BrowserModule,
